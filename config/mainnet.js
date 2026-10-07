@@ -14,15 +14,16 @@ module.exports = {
   WETH: WETH.toLowerCase(),
   v1: {
     // USDC/WETH 0.3% pool of this factory, prices ETH in USD. USDC is token0 (STABLECOIN_IS_TOKEN0).
-    // Derived from the factory and POOL_INIT_CODE_HASH 0xe125...c486; it exists once someone creates it.
-    WETH_USDC_03_POOL: '0xaEaD34c58230D771C57905473CceBD936b755373'.toLowerCase(),
+    // Derived from the factory and POOL_INIT_CODE_HASH 0xda78...c568; it exists once someone creates it.
+    WETH_USDC_03_POOL: '0x7bc2710baEbA4b18103A75928b49Edd70e32338C'.toLowerCase(),
     stablecoinIsToken0: true,
     minimumEthLocked: '60',
     contracts: {
       factory: {
         name: 'Factory',
-        address: '0xeA0A163e0196Bf1500B1B41d3ADdA0476dC137eb'.toLowerCase(),
-        startBlock: 26032204 // factory deployment
+        // Mainnet v2, 2026-10-07: the factory with the fund-safety fixes (Dex223-contracts #103).
+        address: '0x899097B427cd04e1BD07FD3445cc90493300C3a5'.toLowerCase(),
+        startBlock: 26140861 // factory deployment
       },
       tokenConverter: {
         // The live ERC-7417 converter, reused by the 2026-09-22 deployment.
